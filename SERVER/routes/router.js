@@ -6,7 +6,9 @@ const router = function(app, db){
         });
     });
     app.get("/getTop", (req, res)=>{
-        res.send(db.getTopFive());
+        db.getTopFive((result) => {
+            res.send(result);
+        });
     });
     app.post("/getMe", (req, res)=>{
         res.send({

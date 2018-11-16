@@ -1,15 +1,20 @@
 class Database{
     constructor(mongodb){
         this.mongodb = mongodb;
+        this.address = "mongodb://localhost:27017/codeclicker"
     }
-    getTopFive(){
-        this.mongodb.connect("mongodb://Stephaaan:adgjmptw1747@ds163103.mlab.com:63103/codeclicker", (err, db) => {
+    getTopFive(callback){
+        var toReturn = "";
+        this.mongodb.connect( this.address, (err, db) => {
             if(err) throw err;
-            console.log("db created!");
+            var database = db.db("codeclicker");
+            database.collection("players", (err, collection) => {
+                collection.find().sort({accountBalance:-1}).limit(5).toArray((err, result)=>{
+                    if(err) throw err;
+                    callback(result);
+                });
+            });
             db.close();
-        });
-        return ({
-            message:"top five"
         });
     }
 }
