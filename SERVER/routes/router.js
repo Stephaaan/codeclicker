@@ -10,15 +10,14 @@ const router = function(app, db){
             res.send(result);
         });
     });
-    app.post("/getMe", (req, res)=>{
-        res.send({
-            message:"TODO"
+    app.get("/getMe", (req, res)=>{
+        var id = req.query.id;
+        db.getMyPosition(id, (result) => {
+            res.send({"position":result});
         });
     });
     app.post("/write", (req, res) => {
-        res.send({
-            message:"TODO"
-        });
+
     });
 }
 
