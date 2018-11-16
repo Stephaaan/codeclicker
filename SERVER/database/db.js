@@ -18,6 +18,7 @@ class Database{
     }
     getMyPosition(myId, callback){
         var position = 1;
+        var found = false;
         this.mongodb.connect(this.address, (err, db) => {
             if(err) throw err;
             var database = db.db("codeclicker");
@@ -26,15 +27,19 @@ class Database{
                     for(var i = 0, length = result.length; i < length; i++){
                         var element = result[i];
                         if(element.id === myId){
-                            callback(position);
+                            found = true;
                             break;
                         }
                         position++;
                     }
+                    if(!found)
+                    callback("not found");
+                    else
+                    callback(position);
                 });
             });
         });
-        callback("not found");
+
     }
 }
 module.exports = Database;
