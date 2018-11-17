@@ -46,11 +46,52 @@ class Database{
             if(err) throw err;
             var database = db.db("codeclicker");
             database.collection("players", (err, collection) => {
+                accountBalance = parseInt(accountBalance);
                 collection.update({"id": myId}, {$set:{"accountBalance":accountBalance}}, (err, count)=>{
                     if(count.result.nModified > 0){
                         callback({"message":"ok"});
                     }else{
-                        callback({"message":"id not found"});
+                        callback({"message":"not modified (id not found or account balance is the same)"});
+                    }
+                });
+            });
+            db.close();
+        });
+    }
+    createNewAccount(myId, name, accountBalance, callback){
+        this.checkIfIdIsUsed(myId, (arg) => {
+            if(arg){
+                callback({message:"id used"});
+            }else{
+                this.mongodb.connect(this.address, (err, db) => {
+                    if(err) throw err;
+                    var database = db.db("codeclicker");
+                    database.collection("players", (err, collection) => {
+                        if(err) throw err;
+                        accountBalance = parseInt(accountBalance);
+                        collection.insertOne({"id":myId, "name": name, "accountBalance" : accountBalance}, (err, arg) => {
+                            if(arg.result.ok > 0){
+                                callback({message:"ok"});
+                            }else{
+                                callback({message:"error"});
+                            }
+                        });
+                    });
+                });
+            }
+        });
+    }
+    checkIfIdIsUsed(id, callback){
+        this.mongodb.connect(this.address, (err, db)=>{
+            if(err) throw err;
+            var database = db.db("codeclicker");
+            database.collection("players", (err, collection)=> {
+                collection.find({"id":id}).toArray( (err, result) => {
+                    if(result[0] !== undefined){
+                        callback(true);
+                    }
+                    else{
+                        callback(false);
                     }
                 });
             });
