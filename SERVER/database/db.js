@@ -41,5 +41,21 @@ class Database{
         });
 
     }
+    updateMyAccount(myId, accountBalance, callback){
+        this.mongodb.connect(this.address, (err, db) => {
+            if(err) throw err;
+            var database = db.db("codeclicker");
+            database.collection("players", (err, collection) => {
+                collection.update({"id": myId}, {$set:{"accountBalance":accountBalance}}, (err, count)=>{
+                    if(count.result.nModified > 0){
+                        callback({"message":"ok"});
+                    }else{
+                        callback({"message":"id not found"});
+                    }
+                });
+            });
+            db.close();
+        });
+    }
 }
 module.exports = Database;

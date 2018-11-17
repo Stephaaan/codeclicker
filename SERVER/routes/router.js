@@ -16,8 +16,12 @@ const router = function(app, db){
             res.send({"position":result});
         });
     });
-    app.post("/write", (req, res) => {
-
+    app.get("/write", (req, res) => {
+        var id = req.query.id;
+        var accountBalance = req.query.acc;
+        db.updateMyAccount(id, accountBalance, (message)=>{
+            res.send(message);
+        });
     });
 }
 
