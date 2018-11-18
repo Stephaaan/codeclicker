@@ -17,6 +17,4 @@ app.use(bodyParser.urlencoded({
 routes(app,db);
 
 var server = app.listen(port, (req, res) => {
-        console.log("We're live on "+port);
-        console.log("");
 });

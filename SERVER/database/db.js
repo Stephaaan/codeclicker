@@ -33,7 +33,7 @@ class Database{
                         position++;
                     }
                     if(!found)
-                    callback("not found");
+                    callback("error");
                     else
                     callback(position);
                 });
@@ -51,7 +51,8 @@ class Database{
                     if(count.result.nModified > 0){
                         callback({"message":"ok"});
                     }else{
-                        callback({"message":"not modified (id not found or account balance is the same)"});
+                        //ERROR: id not found or writing not changed data
+                        callback({"message":"error"});
                     }
                 });
             });
