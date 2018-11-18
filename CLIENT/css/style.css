@@ -1,0 +1,72 @@
+body, html {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  min-width: 1024px;
+  min-height: 768px;
+  height: 100%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+#sectionLeft {
+  width: 95%;
+  background: #b3b3ff;
+}
+#sectionMiddle {
+  width: 95%;
+  border-right: 1px black solid;
+  border-left: 1px black solid;
+  background: #B65B5B;
+}
+#sectionRight {
+  width: 95%;
+  background: #659a69;
+}
+#Room1, #Room2, #Room3, #Room4, #Room5, #Room6, #Room7, #Room8 {
+  width: 95%;
+  height: 20%;
+  margin: auto;
+  border: 1px black solid;
+  background: #ccccff;
+}
+#Money {
+  width: 95%;
+  height: 15%;
+  margin: auto;
+  border: 1px black solid;
+  background: #c88484;
+}
+#UpgradeList {
+  width: 95%;
+  height: 20%;
+  margin: auto;
+  margin-bottom: : 5%;
+  border: 1px black solid;
+  background: #7BA97E;
+}
+#Store {
+  position: relative;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 2%;
+  padding-bottom: 2%;
+  border: 1px black solid;
+  background: #93b896;
+}
+#Store>div {
+  position: relative;
+  width: 95%;
+  height: 100px;
+  margin: auto;
+  border: 1px black solid;
+  background: #a2c3a5;
+}
