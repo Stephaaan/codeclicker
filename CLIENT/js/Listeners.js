@@ -1,8 +1,10 @@
-function onClick(id)
-{
-  switch(id)
-  {
+function onClick(id){
+  switch(id){
+    case 0:
+        buyClicker();
+        break;
     case 1://()Assembler;
+        buyAssembler();
         break;
     case 2://()Pascal;
         break;
@@ -21,6 +23,6 @@ function onClick(id)
   }
 }
 
-function onProgrammerClick()
-{
+function onProgrammerClick(){
+    code();
 }
