@@ -1,7 +1,7 @@
 class Database{
     constructor(mongodb){
         this.mongodb = mongodb;
-        this.address = "mongodb://localhost:27017/codeclicker"
+        this.address = "mongodb://localhost:27017/codeclicker";
     }
     getTopFive(callback){
         this.mongodb.connect( this.address, (err, db) => {
@@ -51,7 +51,7 @@ class Database{
                     if(count.result.nModified > 0){
                         callback({"message":"ok"});
                     }else{
-                        //ERROR: id not found or writing not changed data
+                        //ERROR: id not found or writing
                         callback({"message":"error"});
                     }
                 });
