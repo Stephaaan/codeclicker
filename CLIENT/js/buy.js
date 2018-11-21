@@ -16,7 +16,7 @@ var buyAssembler = function(){
     redraw();
   }
   else{
-    alert("twat ya");
+    alert("fookin bastard");
   }
 }
 
@@ -27,7 +27,7 @@ var buyPascal = function(){
     redraw();
   }
   else{
-    alert("twat ya");
+    alert("debil");
   }
 }
 
@@ -38,7 +38,7 @@ var buyVisualBasic=function(){
     redraw();
   }
   else{
-    alert("twat ya");
+    alert("nahui poshol");
   }
 }
 
@@ -49,7 +49,7 @@ var buyC=function(){
     redraw();
   }
   else {
-    alert("twat ya");
+    alert("CYKA");
   }
 }
 
@@ -60,7 +60,7 @@ var buyCSharp=function(){
     redraw();
   }
   else {
-    alert("heya twatya");
+    alert("nu blyat");
   }
 }
 
@@ -71,7 +71,7 @@ var buyJavascript=function(){
     redraw();
   }
   else {
-    alert("heya twatya");
+    alert("cunt");
   }
 }
 
@@ -82,7 +82,7 @@ var buyJava=function(){
     redraw();
   }
   else {
-    alert("heya twatya");
+    alert("shithead");
   }
 }
 
@@ -93,6 +93,6 @@ var buyPython=function(){
     redraw();
   }
   else {
-    alert("heya huaahah");
+    alert("western spy");
   }
 }

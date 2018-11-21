@@ -9,7 +9,10 @@
 
 </head>
 
-<body>
+<bodystyle="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+ unselectable="on"
+ onselectstart="return false;"
+ onmousedown="return false;">
 <div id="wrapper">
   <div id="sectionLeft" style="overflow-y:scroll;">
     <h1><center>Rooms</center></h1>
@@ -32,7 +35,7 @@
       <div id="Money"><br><center><div id="totalMoney">0</div> currency<br><br><div id="moneyPerSecond">0</div> currency per second</center></div>
 
     Middle section, koder na ktoreho sa klika
-    <center onclick="onProgrammerClick()"><img src="gfx/pixil-main.png" title="click" width="95%"></center>
+    <center><img style="border-radius:9999px" onclick="onProgrammerClick()" src="gfx/pixil-main.png" title="click" width="95%"></center>
 
   </div>
 
