@@ -1,12 +1,33 @@
 var moneyPerSecond = 0;
 window.onload = function(){
+    //assembler, pascal, visualBasic, c, c#, javascript, java, python
     setInterval(function(){
-        //BEGINOF assembler
         moneyPerSecond = 0;
         if(assembler.level > 0){
             moneyPerSecond+=assembler.basicMoney;
         }
-        //ENDOF assembler
+        if(pascal.level > 0){
+            moneyPerSecond+=pascal.basicMoney;
+        }
+        if(visualBasic.level > 0){
+            moneyPerSecond+=visualBasic.basicMoney;
+        }
+        if(c.level > 0){
+            moneyPerSecond+=c.basicMoney;
+        }
+        if(csharp.level > 0){
+            moneyPerSecond+=csharp.basicMoney;
+        }
+        if(javascript.level > 0){
+            //crying loud
+            moneyPerSecond+=javascript.basicMoney;
+        }
+        if(java.level > 0){
+            moneyPerSecond+=java.basicMoney;
+        }
+        if(python.level > 0){
+            moneyPerSecond+=python.basicMoney;
+        }
         redraw();
         accountBalance+=moneyPerSecond;
     },1000);
@@ -26,25 +47,4 @@ var code = function(){
 var redraw = function(){
     document.getElementById("totalMoney").innerHTML = Math.round(accountBalance*100)/100;
     document.getElementById("moneyPerSecond").innerHTML = Math.round(moneyPerSecond*100)/100;
-}
-var buyClicker = function(){
-    if(accountBalance >= clicker.basicPrice){
-        accountBalance-=clicker.basicPrice;
-        clicker.upgrade();
-        redraw();
-    }
-    else{
-        alert("ya twat");
-    }
-}
-
-var buyAssembler = function(){
-  if (accountBalance >=assembler.basicPrice){
-    accountBalance-=assembler.basicPrice;
-    assembler.upgrade();
-    redraw();
-  }
-  else{
-    alert("twat ya");
-  }
 }
