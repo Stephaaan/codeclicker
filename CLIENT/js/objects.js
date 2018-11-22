@@ -16,6 +16,8 @@ var assembler = {
                 this.addByLevel=this.basicMoney/4;
                 this.priceByLevel=this.basicPrice/4;
             }
+            document.getElementById("levelAssembler").innerHTML = this.level;
+            document.getElementById("priceAssembler").innerHTML = Math.round(this.basicPrice*100)/100;
         },
         load:function(toLevel){
             for(var i = 0; i < toLevel; i++){
@@ -39,7 +41,9 @@ var pascal = {
                 //recalculate
                 this.addByLevel=this.basicMoney/4;
                 this.priceByLevel=this.basicPrice/4;
-              }
+             }
+             document.getElementById("levelPascal").innerHTML = this.level;
+             document.getElementById("pricePascal").innerHTML = Math.round(this.basicPrice*100)/100;
           },
           load:function(toLevel){
               for(var i = 0; i < toLevel; i++){
@@ -64,6 +68,8 @@ var visualBasic = {
                 this.addByLevel=this.basicMoney/5;
                 this.priceByLevel=this.basicPrice/5;
               }
+              document.getElementById("levelVisualBasic").innerHTML = this.level;
+              document.getElementById("levelVisualBasic").innerHTML = Math.round(this.basicPrice*100)/100;
           },
           load:function(toLevel){
               for(var i = 0; i < toLevel; i++){
@@ -88,6 +94,8 @@ var c = {
                 this.addByLevel=this.basicMoney/5;
                 this.priceByLevel=this.basicPrice/5;
               }
+              document.getElementById("levelC").innerHTML = this.level;
+              document.getElementById("levelC").innerHTML = Math.round(this.basicPrice*100)/100;
           },
           load:function(toLevel){
               for(var i = 0; i < toLevel; i++){
@@ -112,6 +120,8 @@ var csharp = {
                 this.addByLevel=this.basicMoney/6;
                 this.priceByLevel=this.basicPrice/6;
               }
+              document.getElementById("levelCSharp").innerHTML = this.level;
+              document.getElementById("levelCSharp").innerHTML = Math.round(this.basicPrice*100)/100;
           },
           load:function(toLevel){
               for(var i = 0; i < toLevel; i++){
@@ -136,6 +146,8 @@ var javascript = {
                 this.addByLevel=this.basicMoney/6;
                 this.priceByLevel=this.basicPrice/6;
               }
+              document.getElementById("levelJavascript").innerHTML = this.level;
+              document.getElementById("levelJavascript").innerHTML = Math.round(this.basicPrice*100)/100;
           },
           load:function(toLevel){
               for(var i = 0; i < toLevel; i++){
@@ -175,6 +187,8 @@ var java = {
                 this.addByLevel=this.basicMoney/7;
                 this.priceByLevel=this.basicPrice/7;
               }
+              document.getElementById("levelJava").innerHTML = this.level;
+              document.getElementById("levelJava").innerHTML = Math.round(this.basicPrice*100)/100;
           },
           load:function(toLevel){
               for(var i = 0; i < toLevel; i++){
@@ -199,6 +213,8 @@ var python = {
                 this.addByLevel=this.basicMoney/7;
                 this.priceByLevel=this.basicPrice/7;
               }
+              document.getElementById("levelPython").innerHTML = this.level;
+              document.getElementById("levelPython").innerHTML = Math.round(this.basicPrice*100)/100;
           },
           load:function(toLevel){
               for(var i = 0; i < toLevel; i++){
@@ -222,6 +238,9 @@ var clicker = {
 
             this.basicMoney+=this.addByLevel;
             this.basicPrice+=this.priceByLevel;
+
+            document.getElementById("levelClicker").innerHTML = this.level;
+            document.getElementById("priceClicker").innerHTML = Math.round(this.basicPrice*100)/100;
       },
       load:function(toLevel){
           for(var i = 0; i < toLevel; i++){
