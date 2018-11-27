@@ -5,7 +5,7 @@ var buyClicker = function(){
         redraw();
     }
     else{
-        alert("ya twat");
+        alert("not enough credits");
     }
 }
 
@@ -16,7 +16,7 @@ var buyAssembler = function(){
     redraw();
   }
   else{
-    alert("fookin bastard");
+      alert("not enough credits");
   }
 }
 
@@ -27,7 +27,7 @@ var buyPascal = function(){
     redraw();
   }
   else{
-    alert("debil");
+      alert("not enough credits");
   }
 }
 
@@ -38,7 +38,7 @@ var buyVisualBasic=function(){
     redraw();
   }
   else{
-    alert("nahui poshol");
+      alert("not enough credits");
   }
 }
 
@@ -49,7 +49,7 @@ var buyC=function(){
     redraw();
   }
   else {
-    alert("CYKA");
+      alert("not enough credits");
   }
 }
 
@@ -60,7 +60,7 @@ var buyCSharp=function(){
     redraw();
   }
   else {
-    alert("nu blyat");
+      alert("not enough credits");
   }
 }
 
@@ -71,7 +71,7 @@ var buyJavascript=function(){
     redraw();
   }
   else {
-    alert("cunt");
+      alert("not enough credits, good for you");
   }
 }
 
@@ -82,7 +82,7 @@ var buyJava=function(){
     redraw();
   }
   else {
-    alert("shithead");
+      alert("not enough credits");
   }
 }
 
@@ -93,6 +93,6 @@ var buyPython=function(){
     redraw();
   }
   else {
-    alert("western spy");
+      alert("not enough credits");
   }
 }

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/objects.js" charset="utf-8"></script>
   <script src="js/Listeners.js" charset="utf-8"></script>
   <script src="js/master.js" charset="utf-8"></script>
@@ -37,7 +38,13 @@
 
     Middle section, koder na ktoreho sa klika
     <center><img style="border-radius:9999px" onclick="onProgrammerClick()" src="gfx/pixil-main.png" title="click" width="95%"></center>
-
+    <div>NAME: <input type="text" id="username" placeholder="new Player" value="new Player"></div>
+    <button onclick="resetEverything()">RESET GAME</button>
+    <div style="text-align:center; font-size:2em;">
+        <span id="top5"></span>
+        <br>...<br>
+        <div id="others"><span id="me"></span><br>...</div>
+    </div>
   </div>
 
   <div id="sectionRight" style="overflow-y:scroll;">
@@ -65,7 +72,7 @@
     <div id="Buy3" onclick="onClick(3)">
         <div>
             Level <b id="levelVisualBasic">0</b><br>
-            Next upgrade: <b id="priceVisualBasic">80</b>
+            Next upgrade: <b id="priceVisualBasic">0</b>
         </div>
         <br>Buy Visual Basic</div>
     <div id="Buy4" onclick="onClick(4)">

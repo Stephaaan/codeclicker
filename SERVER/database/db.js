@@ -41,13 +41,13 @@ class Database{
         });
 
     }
-    updateMyAccount(myId, accountBalance, callback){
+    updateMyAccount(myId, name, accountBalance, callback){
         this.mongodb.connect(this.address, (err, db) => {
             if(err) throw err;
             var database = db.db("codeclicker");
             database.collection("players", (err, collection) => {
                 accountBalance = parseInt(accountBalance);
-                collection.update({"id": myId}, {$set:{"accountBalance":accountBalance}}, (err, count)=>{
+                collection.update({"id": myId}, {$set:{"accountBalance":accountBalance, "name":name}}, (err, count)=>{
                     if(count.result.nModified > 0){
                         callback({"message":"ok"});
                     }else{
