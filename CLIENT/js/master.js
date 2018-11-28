@@ -49,7 +49,6 @@ window.onload = function(){
             });
         });
     }
-    printTopFive();
     //Save
     setInterval(function(){
         localStorage.setItem("money", accountBalance);
@@ -84,6 +83,7 @@ window.onload = function(){
         //get top players
         printTopFive();
     },60000);
+    printTopFive();
     //assembler, pascal, visualBasic, c, c#, javascript, java, python
     setInterval(function(){
         moneyPerSecond = 0;
@@ -184,7 +184,7 @@ var printTopFive = function(){
             for(var i = 0; i < data.length; i++){
                 var player = data[i];
                 if(player.id === localStorage.getItem("id")){
-                    str+="<span style=\"color:yellow\">"+i+1+".) " + player.name + "-" + player.accountBalance + "</span><br>"; //fixme -> i+1 je ako string cize 11
+                    str+="<span style=\"color:yellow\">"+eval(i+1)+".) " + player.name + "-" + player.accountBalance + "</span><br>"; //fixme -> i+1 je ako string cize 11
                     inTopFive = true;
                 }else{
                     str+=i+1+".) " + player.name + "-" + player.accountBalance + "<br>";
@@ -197,7 +197,7 @@ var printTopFive = function(){
                         type:"GET",
                         async:true,
                         success:function(data){
-                            var res = JSON.decode(data);
+                            var res = JSON.parse(data);
                             var position = res.position;
                             document.getElementById("me").innerHTML = position+".) "+localStorage.getItem("username")+"-"+localStorage.getItem("accountBalance");
                         }
