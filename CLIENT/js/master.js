@@ -29,6 +29,7 @@ window.onload = function(){
         javascript.load(parseInt(localStorage.getItem("javascriptLevel")));
         java.load(parseInt(localStorage.getItem("javaLevel")));
         python.load(parseInt(localStorage.getItem("pythonLevel")));
+        printTopFive();
     }else{
         generateID((myid)=>{
             console.log(myid+"-"+document.getElementById("username").value);
@@ -41,6 +42,8 @@ window.onload = function(){
                     if(data.message === "ok"){
                         console.log("player created");
                         localStorage.setItem("id", myid);
+                        console.log(localStorage.getItem("id"));
+                        printTopFive();
                     }
                 },
                 error:function(error){
@@ -59,31 +62,14 @@ window.onload = function(){
         localStorage.setItem("cLevel", c.level);
         localStorage.setItem("csharpLevel", csharp.level);
         localStorage.setItem("javascriptLevel", javascript.level);
-        localStorage.setItem("javaLevel", java.leve);
+        localStorage.setItem("javaLevel", java.level);
         localStorage.setItem("pythonLevel", python.level);
         localStorage.setItem("username", document.getElementById("username").value);
         //write on a Server
         console.log("save");
-        var myid = localStorage.getItem("id");
-        var username = document.getElementById("username").value;
-        $.ajax({
-            url:`http://itsovy.sk:1200/write?id=${myid}&name=${username}&acc=${accountBalance}`,
-            type:"GET",
-            async:true,
-            success:(data)=>{
-                console.log(data.message);
-                if(data.message === "ok"){
-                    console.log("stats saved");
-                }
-            },
-            error:function(error){
-                console.log(error);
-            }
-        });
-        //get top players
-        printTopFive();
+        saveToServer();
+        //calling get top 5 after save in function saveToServer
     },60000);
-    printTopFive();
     //assembler, pascal, visualBasic, c, c#, javascript, java, python
     setInterval(function(){
         moneyPerSecond = 0;
@@ -179,33 +165,55 @@ var printTopFive = function(){
         type:"GET",
         async:true,
         success:function(data){
-            console.log(data.length);
             var inTopFive = false;
             for(var i = 0; i < data.length; i++){
                 var player = data[i];
                 if(player.id === localStorage.getItem("id")){
-                    str+="<span style=\"color:yellow\">"+eval(i+1)+".) " + player.name + "-" + player.accountBalance + "</span><br>"; //fixme -> i+1 je ako string cize 11
+                    str+="<span style=\"color:yellow\">"+eval(i+1)+".) " + player.name + "-" + format(player.accountBalance) + "</span><br>"; //fixme -> i+1 je ako string cize 11
                     inTopFive = true;
                 }else{
-                    str+=i+1+".) " + player.name + "-" + player.accountBalance + "<br>";
+                    str+=i+1+".) " + player.name + "-" + format(player.accountBalance) + "<br>";
                 }
                 if(inTopFive){
                     document.getElementById("others").style.display="none"
                 }else{
+                    document.getElementById("others").style.display="inline-block"
                     $.ajax({
                         url:"http://itsovy.sk:1200/getMe?id="+localStorage.getItem("id"), //fixme: pri prvom calle je to null -> este neni ulozene idcko
                         type:"GET",
                         async:true,
                         success:function(data){
-                            var res = JSON.parse(data);
-                            var position = res.position;
-                            document.getElementById("me").innerHTML = position+".) "+localStorage.getItem("username")+"-"+localStorage.getItem("accountBalance");
+                            console.log(data);
+                            var position = data.position;
+                            console.log( position+".) "+localStorage.getItem("username")+"-"+localStorage.getItem("money"));
+                            document.getElementById("me").innerHTML = "<span style=\"color:yellow\">"+eval(position+1)+".) "+document.getElementById("username").value+"-"+format(accountBalance)+ "</span><br>";
                         }
                     });
                 }
             }
             document.getElementById("top5").innerHTML = str;
             //// TODO: spracovat data
+        },
+        error:function(error){
+            console.log(error);
+        }
+    });
+}
+var saveToServer = function(){
+    var myid = localStorage.getItem("id");
+    var username = document.getElementById("username").value;
+    var acc = accountBalance;
+//    console.log(`http://itsovy.sk:1200/write?id=${myid}&name=${username}&acc=${acc}`);
+    $.ajax({
+        url:`http://itsovy.sk:1200/write?id=${myid}&name=${username}&acc=${acc}`,
+        type:"GET",
+        async:true,
+        success:(data)=>{
+            console.log(data.message);
+            if(data.message === "ok"){
+                console.log("stats saved");
+                printTopFive();
+            }
         },
         error:function(error){
             console.log(error);

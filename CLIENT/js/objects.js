@@ -21,6 +21,7 @@ var assembler = {
             //recalculate
             this.addByLevel=this.basicMoney/basicMoneySplitter;
             this.priceByLevel=this.basicPrice/basicPriceSplitter;
+
             this.redraw();
         },
         load:function(toLevel){
@@ -203,6 +204,9 @@ var python = {
         level:0,
         basicMoney:64, //fix : Filip nastavil basicmoney na 327680 namiesto basicPrice... cize stalo to povodnu cenu
                        // avsak davalo to tych 327680/s
+
+                       //NO NO
+                       //FAKE NEWS
         addByLevel:32,
 
         basicPrice:327680,
