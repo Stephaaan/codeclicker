@@ -90,11 +90,22 @@ var code = function(){
 }
 /*
     funkcia ktorá prekreslí div totalMoney (accountBalance)
-    a div moneyPerSecond
+    a div moneyPerSecond +disablne kupu ak nie je dost currency a prekresli programatorov
 */
 var redraw = function(){
     document.getElementById("totalMoney").innerHTML = format(accountBalance);
     document.getElementById("moneyPerSecond").innerHTML = format(moneyPerSecond);
+
+    document.getElementById("Buy0").className = accountBalance >= clicker.basicPrice ? "" : "disabled";
+    document.getElementById("Buy1").className = accountBalance >= assembler.basicPrice ? "" : "disabled";
+    document.getElementById("Buy2").className = accountBalance >= pascal.basicPrice ? "" : "disabled";
+    document.getElementById("Buy3").className = accountBalance >= visualBasic.basicPrice ? "" : "disabled";
+    document.getElementById("Buy4").className = accountBalance >= c.basicPrice ? "" : "disabled";
+    document.getElementById("Buy5").className = accountBalance >= csharp.basicPrice ? "" : "disabled";
+    document.getElementById("Buy6").className = accountBalance >= javascript.basicPrice ? "" : "disabled";
+    document.getElementById("Buy7").className = accountBalance >= java.basicPrice ? "" : "disabled";
+    document.getElementById("Buy8").className = accountBalance >= python.basicPrice ? "" : "disabled";
+    workers();
 }
 /*
     funkcia ktorá resetne hru
@@ -199,4 +210,57 @@ var initComponents = function(){
     javascript.redraw();
     java.redraw();
     python.redraw();
+}
+/*
+    prida sa programator ak je kupeny dany language na 1 a 2
+*/
+var workers = function(){
+  if(assembler.level > 0){
+    document.getElementById("Room1").innerHTML="<img src='gfx/worker1.png' id='worker1'>";
+  }
+  if(pascal.level > 0){
+    document.getElementById("Room2").innerHTML="<img src='gfx/worker2.png' id='worker2'>";
+  }
+  if(visualBasic.level > 0){
+    document.getElementById("Room3").innerHTML="<img src='gfx/worker3.png' id='worker3'>";
+  }
+  if(c.level > 0){
+    document.getElementById("Room4").innerHTML="<img src='gfx/worker4.png' id='worker4'>";
+  }
+  if(csharp.level > 0){
+    document.getElementById("Room5").innerHTML="<img src='gfx/worker5.png' id='worker5'>";
+  }
+  if(javascript.level > 0){
+    document.getElementById("Room6").innerHTML="<img src='gfx/worker6.png' id='worker6'>";
+  }
+  if(java.level > 0){
+    document.getElementById("Room7").innerHTML="<img src='gfx/worker7.png' id='worker7'>";
+  }
+  if(python.level > 0){
+    document.getElementById("Room8").innerHTML="<img src='gfx/worker8.png' id='worker8'>";
+  }
+  if(assembler.level > 1){
+    document.getElementById("Room1").innerHTML+="<img src='gfx/worker8.png' id='worker8'/>";
+  }
+  if(pascal.level > 1){
+    document.getElementById("Room2").innerHTML+="<img src='gfx/worker7.png' id='worker7'>";
+  }
+  if(visualBasic.level > 1){
+    document.getElementById("Room3").innerHTML+="<img src='gfx/worker6a.png' id='worker6a'>";
+  }
+  if(c.level > 1){
+    document.getElementById("Room4").innerHTML+="<img src='gfx/worker5.png' id='worker5'>";
+  }
+  if(csharp.level > 1){
+    document.getElementById("Room5").innerHTML+="<img src='gfx/worker4.png' id='worker4'>";
+  }
+  if(javascript.level > 1){
+    document.getElementById("Room6").innerHTML+="<img src='gfx/worker3.png' id='worker3'>";
+  }
+  if(java.level > 1){
+    document.getElementById("Room7").innerHTML+="<img src='gfx/worker2.png' id='worker2'>";
+  }
+  if(python.level > 1){
+    document.getElementById("Room8").innerHTML+="<img src='gfx/worker1.png' id='worker1'>";
+  }
 }

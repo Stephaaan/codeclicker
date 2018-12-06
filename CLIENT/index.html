@@ -4,108 +4,103 @@
   <meta charset="utf-8">
   <meta name="expires" content="0">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/serverCalls.js" charset="utf-8"></script>
-  <script src="js/objects.js" charset="utf-8"></script>
-  <script src="js/Listeners.js" charset="utf-8"></script>
-  <script src="js/master.js" charset="utf-8"></script>
-  <script src="js/buy.js" charset="utf-8"></script>
-
 </head>
 
 <body >
 <div id="wrapper">
-  <div id="sectionLeft" style="overflow-y:scroll;">
-    <h1><center>Rooms:</center></h1>
-
-    <div id="Room1">Room Assembler</div><br>
-    <div id="Room2">Room Pascal</div><br>
-    <div id="Room3">Room Visual Basic</div><br>
-    <div id="Room4">Room C</div><br>
-    <div id="Room5">Room C#</div><br>
-    <div id="Room6">Room Javascript</div><br>
-    <div id="Room7">Room Java</div><br>
-    <div id="Room8">Room Python</div><br>
-    &nbsp
+  <div id="sectionLeft">
+    <h1><center>Rooms:</center></h1>Room Assembler:
+    <div id="Room1">No employees here</div>Pascal room:
+    <div id="Room2">No employees here</div>Visual Basic room:
+    <div id="Room3">No employees here</div>C room:
+    <div id="Room4">No employees here</div>C# room:
+    <div id="Room5">No employees here</div>Javascript room:
+    <div id="Room6">No employees here</div>Java room:
+    <div id="Room7">No employees here</div>Python room:
+    <div id="Room8">No employees here</div>
   </div>
 
   <!-- <div class="separatorLeft"></div>
   <div class="separatorRight"></div> -->
 
-  <div id="sectionMiddle"><br>
-    <div id="Money"><center><div id="totalMoney">0</div> currency<br><br><div id="moneyPerSecond">0</div> currency per second</center></div><br>
-    <center><img style="border-radius:9999px" onclick="onProgrammerClick()" src="gfx/pixil-main.png" title="Click!" width="85%"></center><br>
-    <div id="playerInfo" style="overflow-y:scroll;"><center><div><br>NAME: <input type="text" id="username" placeholder="new Player" value="new Player"></div><br>
-    <div style="text-align:center; font-size:80%;">
+  <div id="sectionMiddle">
+    <div id="Money"><center><div id="totalMoney">0</div> currency<br><hr><div id="moneyPerSecond">0</div> currency per second</center></div>
+    <center><img id="programmer" onclick="onProgrammerClick()" src="gfx/pixil-main.png" title="Click!"></center>
+    <div id="playerInfo"><center><div><input type="text" id="username" placeholder="Enter your name:" value="new Player"></div>
+    <div id="topPlayers">
         <span id="top5"></span>
-        <br>...<br>
+        ...<br>
         <div id="others"><span id="me"></span>&nbsp</div>
       </div>
+      <center><button type="button" class="resetButton" onclick="resetEverything()">RESET GAME</button></center>
     </div>
-    <center><button type="button" class="resetButton" onclick="resetEverything()">RESET GAME</button></center>
   </div>
 
-  <div id="sectionRight" style="overflow-y:scroll;">
+  <div id="sectionRight">
     <h1><center>Store:</center></h1>
     <div id="Store">
-    <div id="Buy0" onclick="onClick(0)">
+    <div id="Buy0">
         <div>
-            Level <b id="levelClicker">1</b><br><br>
-            Next upgrade: <b id="priceClicker">5</b>
+            &nbsp Level <b id="levelClicker">1</b><br><br>
+            &nbsp Next upgrade: <b id="priceClicker">5</b>
         </div>
-        <br>Buy Clicker</div><br>
-    <div id="Buy1" onclick="onClick(1)">
+        <br>&nbsp Buy Clicker</div><br>
+    <div id="Buy1">
         <div>
-            Level <b id="levelAssembler">0</b><br><br>
-            Next upgrade: <b id="priceAssembler">20</b>
+            &nbsp Level <b id="levelAssembler">0</b><br><br>
+            &nbsp Next upgrade: <b id="priceAssembler">20</b>
         </div>
-        <br>Buy Assembler</div><br>
-    <div id="Buy2" onclick="onClick(2)">
+        <br>&nbsp Buy Assembler</div><br>
+    <div id="Buy2">
         <div>
-            Level <b id="levelPascal">0</b><br><br>
-            Next upgrade: <b id="pricePascal">40</b>
+            &nbsp Level <b id="levelPascal">0</b><br><br>
+            &nbsp Next upgrade: <b id="pricePascal">40</b>
         </div>
-        <br>Buy Pascal</div><br>
-    <div id="Buy3" onclick="onClick(3)">
+        <br>&nbsp Buy Pascal</div><br>
+    <div id="Buy3">
         <div>
-            Level <b id="levelVisualBasic">0</b><br><br>
-            Next upgrade: <b id="priceVisualBasic">0</b>
+            &nbsp Level <b id="levelVisualBasic">0</b><br><br>
+            &nbsp Next upgrade: <b id="priceVisualBasic">0</b>
         </div>
-        <br>Buy Visual Basic</div><br>
-    <div id="Buy4" onclick="onClick(4)">
+        <br>&nbsp Buy Visual Basic</div><br>
+    <div id="Buy4">
         <div>
-            Level <b id="levelC">0</b><br><br>
-            Next upgrade: <b id="priceC">160</b>
+            &nbsp Level <b id="levelC">0</b><br><br>
+            &nbsp Next upgrade: <b id="priceC">160</b>
         </div>
-        <br>Buy C</div><br>
-    <div id="Buy5" onclick="onClick(5)">
+        <br>&nbsp Buy C</div><br>
+    <div id="Buy5">
         <div>
-            Level <b id="levelCSharp">0</b><br><br>
-            Next upgrade: <b id="priceCSharp">320</b>
+            &nbsp Level <b id="levelCSharp">0</b><br><br>
+            &nbsp Next upgrade: <b id="priceCSharp">320</b>
         </div>
-        <br>Buy C#</div><br>
-    <div id="Buy6" onclick="onClick(6)">
+        <br>&nbsp Buy C#</div><br>
+    <div id="Buy6">
         <div>
-            Level <b id="levelJavascript">0</b><br><br>
-            Next upgrade: <b id="priceJavascript">640</b>
-        </div><br>
-        Buy Javascript</div><br>
-    <div id="Buy7" onclick="onClick(7)">
+            &nbsp Level <b id="levelJavascript">0</b><br><br>
+            &nbsp Next upgrade: <b id="priceJavascript">640</b>
+        </div>
+        <br>&nbsp Buy Javascript</div><br>
+    <div id="Buy7">
         <div>
             Level <b id="levelJava">0</b><br><br>
             Next upgrade: <b id="priceJava">1280</b>
         </div>
-        <br>Buy Java</div><br>
-    <div id="Buy8" onclick="onClick(8)">
+        <br>&nbsp Buy Java</div><br>
+    <div id="Buy8">
         <div>
-            Level <b id="levelPython">0</b><br><br>
-            Next upgrade: <b id="pricePython">2560</b>
+            &nbsp Level <b id="levelPython">0</b><br><br>
+            &nbsp Next upgrade: <b id="pricePython">2560</b>
         </div>
-        <br>Buy Python</div>
+        <br>&nbsp Buy Python</div>
     </div>
   </div>
 </div>
-<script>
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/serverCalls.js" charset="utf-8"></script>
+<script src="js/objects.js" charset="utf-8"></script>
+<script src="js/Listeners.js" charset="utf-8"></script>
+<script src="js/master.js" charset="utf-8"></script>
+<script src="js/buy.js" charset="utf-8"></script>
 </body>
 </html>

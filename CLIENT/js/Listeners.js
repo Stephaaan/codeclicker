@@ -1,31 +1,31 @@
 function onClick(id){
   switch(id){
     case 0:
-        buyClicker();
+        buy0();
         break;
     case 1://()Assembler;
-        buyAssembler();
+        buy1();
         break;
     case 2://()Pascal;
-        buyPascal();
+        buy2();
         break;
     case 3://()Visual Basic;
-        buyVisualBasic();
+        buy3();
         break;
     case 4://()C;
-        buyC();
+        buy4();
         break;
     case 5://()C#;
-        buyCSharp();
+        buy5();
         break;
     case 6://()Javascript;
-        buyJavascript();
+        buy6();
         break;
     case 7://()Java;
-        buyJava();
+        buy7();
         break;
     case 8://()Python;
-        buyPython();
+        buy8();
         break;
   }
 }

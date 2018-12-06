@@ -1,4 +1,4 @@
-var buyClicker = function(){
+document.getElementById("Buy0").onclick = function () {
     if(accountBalance >= clicker.basicPrice){
         accountBalance-=clicker.basicPrice;
         clicker.upgrade();
@@ -9,7 +9,7 @@ var buyClicker = function(){
     }
 }
 
-var buyAssembler = function(){
+document.getElementById("Buy1").onclick = function () {
   if (accountBalance >=assembler.basicPrice){
     accountBalance-=assembler.basicPrice;
     assembler.upgrade();
@@ -20,7 +20,7 @@ var buyAssembler = function(){
   }
 }
 
-var buyPascal = function(){
+document.getElementById("Buy2").onclick = function () {
   if(accountBalance >=pascal.basicPrice){
     accountBalance-=pascal.basicPrice;
     pascal.upgrade();
@@ -31,7 +31,7 @@ var buyPascal = function(){
   }
 }
 
-var buyVisualBasic=function(){
+document.getElementById("Buy3").onclick = function () {
   if(accountBalance>=visualBasic.basicPrice){
     accountBalance-=visualBasic.basicPrice;
     visualBasic.upgrade();
@@ -42,7 +42,7 @@ var buyVisualBasic=function(){
   }
 }
 
-var buyC=function(){
+document.getElementById("Buy4").onclick = function () {
   if(accountBalance>=c.basicPrice){
     accountBalance-=c.basicPrice;
     c.upgrade();
@@ -53,7 +53,7 @@ var buyC=function(){
   }
 }
 
-var buyCSharp=function(){
+document.getElementById("Buy5").onclick = function () {
   if(accountBalance>=csharp.basicPrice){
     accountBalance-=csharp.basicPrice;
     csharp.upgrade();
@@ -64,7 +64,7 @@ var buyCSharp=function(){
   }
 }
 
-var buyJavascript=function(){
+document.getElementById("Buy6").onclick = function () {
   if(accountBalance>=javascript.basicPrice){
     accountBalance-=javascript.basicPrice;
     javascript.upgrade();
@@ -75,7 +75,7 @@ var buyJavascript=function(){
   }
 }
 
-var buyJava=function(){
+document.getElementById("Buy7").onclick = function () {
   if(accountBalance>=java.basicPrice){
     accountBalance-=java.basicPrice;
     java.upgrade();
@@ -86,7 +86,7 @@ var buyJava=function(){
   }
 }
 
-var buyPython=function(){
+document.getElementById("Buy8").onclick = function () {
   if(accountBalance>=python.basicPrice){
     accountBalance-=python.basicPrice;
     python.upgrade();
