@@ -1,0 +1,32 @@
+{
+  "name": "codeclicker",
+  "version": "0.0.1",
+  "description": "A game",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stephaaan/codeclicker.git"
+  },
+  "keywords": [
+    "game",
+    "programming",
+    "clicker"
+  ],
+  "author": "Stefan Rothmajer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stephaaan/codeclicker/issues"
+  },
+  "homepage": "https://github.com/Stephaaan/codeclicker#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongodb": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
