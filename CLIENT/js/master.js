@@ -1,7 +1,41 @@
 var moneyPerSecond = 0;
 var localStorage = window.localStorage;
 var accountBalance = 0;
+/*
+  MUSIC
+  @author = "Filip Cernecky"
+*/
+
+/*
+  TODO: dat toto do html:
+  <audio controls loop id="music">
+	<source src="NH.mp3" type="audio/mpeg">
+	</audio>
+  + btn kde bude onclick = musicControls()
+*/
+var playing = true;
+var musicControls = function(){
+    if(playing){
+      pause();
+    }else{
+      play();
+    }
+    playing = !playing;
+}
+var myMusic= document.getElementById("music");
+function play() {
+	myMusic.play();
+}
+
+function pause() {
+	myMusic.pause();
+}
+
 window.onload = function(){
+    /*
+      zapneme nejaku good music
+    */
+    play();
     /*
         inicializujeme všetky upgrade-y na defaultne hodnoty
     */
