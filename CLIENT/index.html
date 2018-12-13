@@ -9,15 +9,17 @@
 <body >
 <div id="wrapper">
   <div id="sectionLeft">
-    <h1><center>Rooms:</center></h1>Room Assembler:
-    <div id="Room1">No employees here</div>Pascal room:
-    <div id="Room2">No employees here</div>Visual Basic room:
-    <div id="Room3">No employees here</div>C room:
-    <div id="Room4">No employees here</div>C# room:
-    <div id="Room5">No employees here</div>Javascript room:
-    <div id="Room6">No employees here</div>Java room:
-    <div id="Room7">No employees here</div>Python room:
-    <div id="Room8">No employees here</div>
+        <h1><center>Rooms:</center></h1>
+        <div id="Rooms">
+        <div id="Room1">Room Assembler:<div id="spawner1"></div></div>
+        <div id="Room2">Pascal room:<div id="spawner2"></div></div>
+        <div id="Room3">Visual Basic room:<div id="spawner3"></div></div>
+        <div id="Room4">C room:<div id="spawner4"></div></div>
+        <div id="Room5">C# room:<div id="spawner5"></div></div>
+        <div id="Room6">Javascript room:<div id="spawner6"></div></div>
+        <div id="Room7">Java room:<div id="spawner7"></div></div>
+        <div id="Room8">Python room:<div id="spawner8"></div></div>
+      </div>
   </div>
 
   <!-- <div class="separatorLeft"></div>
@@ -25,14 +27,14 @@
 
   <div id="sectionMiddle">
     <div id="Money"><center><div id="totalMoney">0</div> currency<br><hr><div id="moneyPerSecond">0</div> currency per second</center></div>
-    <center><img id="programmer" onclick="onProgrammerClick()" src="gfx/pixil-main.png" title="Click!"></center>
+    <center><img id="programmer" onclick="onProgrammerClick()" src="gfx/pixil-main.png" value="front" title="Click!"></center>
     <div id="playerInfo"><center><div><input type="text" id="username" placeholder="Enter your name:" value="new Player"></div>
     <div id="topPlayers">
         <span id="top5"></span>
         ...<br>
         <div id="others"><span id="me"></span>&nbsp</div>
       </div>
-      <center><button type="button" class="resetButton" onclick="resetEverything()">RESET GAME</button></center>
+      <center><button type="button" class="resetButton" onclick="resetEverything()">RESET GAME</button></center><button onclick="musicControls()">Music</button>
     </div>
   </div>
 
@@ -96,6 +98,9 @@
     </div>
   </div>
 </div>
+    <audio style= "display:none" controls loop id="music">
+	<source src="snd/NH.mp3" type="audio/mpeg">
+	</audio>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/serverCalls.js" charset="utf-8"></script>
 <script src="js/objects.js" charset="utf-8"></script>

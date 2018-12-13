@@ -1,4 +1,4 @@
-var moneyPerSecond = 0;
+﻿var moneyPerSecond = 0;
 var localStorage = window.localStorage;
 var accountBalance = 0;
 /*
@@ -8,7 +8,7 @@ var accountBalance = 0;
 
 /*
   TODO: dat toto do html:
-  <audio controls loop id="music">
+  <audio style= "display:none" controls loop id="music">
 	<source src="NH.mp3" type="audio/mpeg">
 	</audio>
   + btn kde bude onclick = musicControls()
@@ -32,9 +32,6 @@ function pause() {
 }
 
 window.onload = function(){
-    /*
-      zapneme nejaku good music
-    */
     play();
     /*
         inicializujeme všetky upgrade-y na defaultne hodnoty
@@ -118,7 +115,16 @@ var calculateMoneyPerSecond = function(){
     pridá k accountBalance money za klik
     a prekreslí accountBalance a moneyPerSecond
 */
+
+var toggle = false;
 var code = function(){
+    if(toggle){
+      document.getElementById('programmer').src='gfx/pixil-main.png';
+    }
+    else{
+      document.getElementById('programmer').src='gfx/pixel-main.png';
+    }
+    toggle=!toggle;
     accountBalance+=clicker.basicMoney;
     redraw();
 }
@@ -250,51 +256,51 @@ var initComponents = function(){
 */
 var workers = function(){
   if(assembler.level > 0){
-    document.getElementById("Room1").innerHTML="<img src='gfx/worker1.png' id='worker1'>";
+    document.getElementById("spawner1").innerHTML="<img src='gfx/worker1.png' id='worker1'>";
   }
   if(pascal.level > 0){
-    document.getElementById("Room2").innerHTML="<img src='gfx/worker2.png' id='worker2'>";
+    document.getElementById("spawner2").innerHTML="<img src='gfx/worker2.png' id='worker2'>";
   }
   if(visualBasic.level > 0){
-    document.getElementById("Room3").innerHTML="<img src='gfx/worker3.png' id='worker3'>";
+    document.getElementById("spawner3").innerHTML="<img src='gfx/worker3.png' id='worker3'>";
   }
   if(c.level > 0){
-    document.getElementById("Room4").innerHTML="<img src='gfx/worker4.png' id='worker4'>";
+    document.getElementById("spawner4").innerHTML="<img src='gfx/worker4.png' id='worker4'>";
   }
   if(csharp.level > 0){
-    document.getElementById("Room5").innerHTML="<img src='gfx/worker5.png' id='worker5'>";
+    document.getElementById("spawner5").innerHTML="<img src='gfx/worker5.png' id='worker5'>";
   }
   if(javascript.level > 0){
-    document.getElementById("Room6").innerHTML="<img src='gfx/worker6.png' id='worker6'>";
+    document.getElementById("spawner6").innerHTML="<img src='gfx/worker6.png' id='worker6'>";
   }
   if(java.level > 0){
-    document.getElementById("Room7").innerHTML="<img src='gfx/worker7.png' id='worker7'>";
+    document.getElementById("spawner7").innerHTML="<img src='gfx/worker7.png' id='worker7'>";
   }
   if(python.level > 0){
-    document.getElementById("Room8").innerHTML="<img src='gfx/worker8.png' id='worker8'>";
+    document.getElementById("spawner8").innerHTML="<img src='gfx/worker8.png' id='worker8'>";
   }
   if(assembler.level > 1){
-    document.getElementById("Room1").innerHTML+="<img src='gfx/worker8.png' id='worker8'/>";
+    document.getElementById("spawner1").innerHTML+="<img src='gfx/worker8.png' id='worker8'/>";
   }
   if(pascal.level > 1){
-    document.getElementById("Room2").innerHTML+="<img src='gfx/worker7.png' id='worker7'>";
+    document.getElementById("spawner2").innerHTML+="<img src='gfx/worker7.png' id='worker7'>";
   }
   if(visualBasic.level > 1){
-    document.getElementById("Room3").innerHTML+="<img src='gfx/worker6a.png' id='worker6a'>";
+    document.getElementById("spawner3").innerHTML+="<img src='gfx/worker6a.png' id='worker6a'>";
   }
   if(c.level > 1){
-    document.getElementById("Room4").innerHTML+="<img src='gfx/worker5.png' id='worker5'>";
+    document.getElementById("spawner4").innerHTML+="<img src='gfx/worker5.png' id='worker5'>";
   }
   if(csharp.level > 1){
-    document.getElementById("Room5").innerHTML+="<img src='gfx/worker4.png' id='worker4'>";
+    document.getElementById("spawner5").innerHTML+="<img src='gfx/worker4.png' id='worker4'>";
   }
   if(javascript.level > 1){
-    document.getElementById("Room6").innerHTML+="<img src='gfx/worker3.png' id='worker3'>";
+    document.getElementById("spawner6").innerHTML+="<img src='gfx/worker3.png' id='worker3'>";
   }
   if(java.level > 1){
-    document.getElementById("Room7").innerHTML+="<img src='gfx/worker2.png' id='worker2'>";
+    document.getElementById("spawner7").innerHTML+="<img src='gfx/worker2.png' id='worker2'>";
   }
   if(python.level > 1){
-    document.getElementById("Room8").innerHTML+="<img src='gfx/worker1.png' id='worker1'>";
+    document.getElementById("spawner8").innerHTML+="<img src='gfx/worker1.png' id='worker1'>";
   }
 }
