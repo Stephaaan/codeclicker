@@ -7,6 +7,9 @@ document.getElementById("Buy0").onclick = function () {
     else{
         alert("not enough credits");
     }
+    
+    var element = document.getElementById('Buy0');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy1").onclick = function () {
@@ -18,6 +21,9 @@ document.getElementById("Buy1").onclick = function () {
   else{
       alert("not enough credits");
   }
+    
+    var element = document.getElementById('Buy1');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy2").onclick = function () {
@@ -29,6 +35,9 @@ document.getElementById("Buy2").onclick = function () {
   else{
       alert("not enough credits");
   }
+    
+    var element = document.getElementById('Buy2');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy3").onclick = function () {
@@ -40,6 +49,9 @@ document.getElementById("Buy3").onclick = function () {
   else{
       alert("not enough credits");
   }
+    
+    var element = document.getElementById('Buy3');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy4").onclick = function () {
@@ -51,6 +63,9 @@ document.getElementById("Buy4").onclick = function () {
   else {
       alert("not enough credits");
   }
+    
+    var element = document.getElementById('Buy4');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy5").onclick = function () {
@@ -62,6 +77,9 @@ document.getElementById("Buy5").onclick = function () {
   else {
       alert("not enough credits");
   }
+    
+    var element = document.getElementById('Buy5');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy6").onclick = function () {
@@ -73,6 +91,9 @@ document.getElementById("Buy6").onclick = function () {
   else {
       alert("not enough credits, good for you");
   }
+    
+    var element = document.getElementById('Buy6');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy7").onclick = function () {
@@ -84,6 +105,9 @@ document.getElementById("Buy7").onclick = function () {
   else {
       alert("not enough credits");
   }
+    
+    var element = document.getElementById('Buy7');
+    element.classList.toggle("clicked");
 }
 
 document.getElementById("Buy8").onclick = function () {
@@ -95,4 +119,7 @@ document.getElementById("Buy8").onclick = function () {
   else {
       alert("not enough credits");
   }
+    
+    var element = document.getElementById('Buy8');
+    element.classList.toggle("clicked");
 }
