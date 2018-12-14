@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  </head>
+  <body>
+	<audio controls loop id="music">
+	<source src="NH.mp3" type="audio/mpeg">
+	</audio>
+
+	<p>Click the buttons to play or pause the music.</p>
+
+	<button onclick="play()" type="button">Play </button>
+	<button onclick="pause()" type="button">Pause</button>
+
+	<script>
+	var myMusic= document.getElementById("music");
+	function play() {
+		myMusic.play();
+	}
+
+	function pause() {
+		myMusic.pause();
+	}
+	</script>
+<!--
+	link: http://javascript-tutor.net/index.php/playing-music-using-javascript/
+-->
+</body>
+</html>
+
