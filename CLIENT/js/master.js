@@ -16,9 +16,9 @@ var accountBalance = 0;
 var playing = true;
 var musicControls = function(){
     if(playing){
-      pause();
-    }else{
       play();
+    }else{
+      pause();
     }
     playing = !playing;
 }
@@ -268,7 +268,7 @@ var workers = function(){
     document.getElementById("spawner4").innerHTML="<img src='gfx/worker4.png' id='worker4'>";
   }
   if(csharp.level > 0){
-    document.getElementById("spawner5").innerHTML="<img src='gfx/worker5.png' id='worker5'>";
+    document.getElementById("spawner5").innerHTML="<img src='gfx/worker5a.png' id='worker5a'>";
   }
   if(javascript.level > 0){
     document.getElementById("spawner6").innerHTML="<img src='gfx/worker6.png' id='worker6'>";
@@ -292,7 +292,7 @@ var workers = function(){
     document.getElementById("spawner4").innerHTML+="<img src='gfx/worker5.png' id='worker5'>";
   }
   if(csharp.level > 1){
-    document.getElementById("spawner5").innerHTML+="<img src='gfx/worker4.png' id='worker4'>";
+    document.getElementById("spawner5").innerHTML+="<img src='gfx/worker4a.png' id='worker4a'>";
   }
   if(javascript.level > 1){
     document.getElementById("spawner6").innerHTML+="<img src='gfx/worker3.png' id='worker3'>";
