@@ -26,15 +26,22 @@
   <div class="separatorRight"></div> -->
 
   <div id="sectionMiddle">
-    <div id="Money"><center><div id="totalMoney">0</div> currency<br><hr><div id="moneyPerSecond">0</div> currency per second</center></div>
+    <div id="Money"><center><div id="totalMoney">0</div> currency<br><hr width="80%"><div id="moneyPerSecond">0</div> currency per second</center></div>
     <center><img id="programmer" onclick="onProgrammerClick()" src="gfx/pixil-main.png" value="front" title="Click!"></center>
-    <div id="playerInfo"><center><div><input type="text" id="username" placeholder="Enter your name:" value="new Player"></div>
+    <div id="playerInfo"><center><div><input type="text" maxlength="16" id="username" placeholder="Enter your name:" value="new Player"></div>
     <div id="topPlayers">
         <span id="top5"></span>
         ...<br>
         <div id="others"><span id="me"></span>&nbsp</div>
       </div>
-      <center><button type="button" class="resetButton" onclick="resetEverything()">RESET GAME</button></center><button onclick="musicControls()">Music</button>
+        <hr width="80%"><br>
+        For more immersion click on play:
+        <div class="playpause">
+            <input type="checkbox" value="None" id="playpause" checked="checked" name="check" onclick="musicControls()"/>
+            <label for="playpause" tabindex=1></label>
+        </div><hr width="80%"><br>
+        For restarting the game click on button:
+        <center><button type="button" class="resetButton" onclick="resetEverything()">RESET GAME</button></center>
     </div>
   </div>
 
