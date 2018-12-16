@@ -105,14 +105,14 @@ body {
 width: 150px;
 height: 150px;
 position: absolute;
-left: 60px;
+left: 15%;
 bottom: 20%;
 }
 #worker2, #worker4, #worker4a, #worker6, #worker6a, #worker8{
 width: 150px;
 height: 150px;
 position: absolute;
-left: 220px;
+left: 50%;
 bottom: 20%;
 }
 #Money {
