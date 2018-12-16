@@ -166,6 +166,9 @@ var saveToServer = function(){
     var myid = localStorage.getItem("id");
     //do premennej username vlozime hodnotu z inputu
     var username = document.getElementById("username").value;
+    if(username === ""){
+      document.getElementById("username").value="New Player";
+    }
     //do premennej acc vlozime hodnotu accountBalance
     var acc = accountBalance;
     $.ajax({

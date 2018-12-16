@@ -28,7 +28,7 @@
   <div id="sectionMiddle">
     <div id="Money"><center><div id="totalMoney">0</div> currency<br><hr width="80%"><div id="moneyPerSecond">0</div> currency per second</center></div>
     <center><img id="programmer" onclick="onProgrammerClick()" src="gfx/pixil-main.png" value="front" title="Click!"></center>
-    <div id="playerInfo"><center><div><input type="text" maxlength="16" id="username" placeholder="Enter your name:" value="new Player"></div>
+    <div id="playerInfo"><center><div><input type="text" maxlength="16" id="username" placeholder="Enter your name:" value="new Player"onmouseout="validateUsername()"></div>
     <div id="topPlayers">
         <span id="top5"></span>
         ...<br>
@@ -92,8 +92,8 @@
         <br>&nbsp Buy Javascript</div><br>
     <div id="Buy7">
         <div>
-            Level <b id="levelJava">0</b><br><br>
-            Next upgrade: <b id="priceJava">1280</b>
+            &nbsp Level <b id="levelJava">0</b><br><br>
+            &nbsp Next upgrade: <b id="priceJava">1280</b>
         </div>
         <br>&nbsp Buy Java</div><br>
     <div id="Buy8">
@@ -106,7 +106,8 @@
   </div>
 </div>
     <audio style= "display:none" controls loop id="music">
-	<source src="snd/NH.mp3" type="audio/mpeg">
+	     <source src="snd/NH.mp3" type="audio/mpeg">
+         <source src="snd/NH.ogg" type="audio/ogg">
 	</audio>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/serverCalls.js" charset="utf-8"></script>

@@ -13,9 +13,9 @@ var accountBalance = 0;
 	</audio>
   + btn kde bude onclick = musicControls()
 */
-var playing = true;
+var playing = false;
 var musicControls = function(){
-    if(playing){
+    if(!playing){
       play();
     }else{
       pause();
@@ -200,6 +200,7 @@ var saveToLocalStorage = function(){
     localStorage.setItem("javaLevel", java.level);
     localStorage.setItem("pythonLevel", python.level);
     localStorage.setItem("username", document.getElementById("username").value);
+
 }
     /*
         funkcia pre načítanie uloženého progressu pri spustení hry (username, accountbalance a levely upgradeov)
@@ -210,6 +211,9 @@ var loadGame = function(){
         localStorage.getItem(key:string);
     */
     document.getElementById("username").value = localStorage.getItem("username");
+    if(document.getElementById("username").value === ""){
+      document.getElementById("username").value="New Player";
+    }
     /*
         nastavenie accountBalance zo save-u
         1.) najvnútornejšie zátvorky - načítame hodnotu money z localStorage
@@ -302,5 +306,10 @@ var workers = function(){
   }
   if(python.level > 1){
     document.getElementById("spawner8").innerHTML+="<img src='gfx/worker1.png' id='worker1'>";
+  }
+}
+var validateUsername = function(){
+  if(document.getElementById("username").value === ""){
+    document.getElementById("username").value="New Player";
   }
 }
